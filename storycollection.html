@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stories</title>
+    <link rel="icon" type="image/png" href="a0751543949_16.jpg">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            background: #0f0f12;  
+            width: 100%;
+            min-height: 100vh;
+        }  
+
+        .sr { 
+            background: #0f0f12; 
+            color: #e3e3e8; 
+            font-family: Times New Roman, serif; 
+            font-size: 14px; 
+            min-height: 100vh; 
+            padding: 0; 
+            margin: 0;
+            width: 100%;
+        }
+
+        .sr a { color: #7cb9ff; }
+
+        .sr a:visited { color: #c58aff; }
+
+        .sr a:hover { color: #ffa066; }
+
+        .sr h1 { font-size: 22px; margin: 0 0 2px 0; font-weight: bold; color: #eaeaff; }
+
+        .sr h2 { 
+            font-size: 16px; 
+            border-bottom: 1px solid #4a4a5a; 
+            margin: 18px 0 6px 0; 
+            padding-bottom: 2px; 
+            font-weight: bold; 
+            color: #dedeff; 
+        }
+
+        .sr h3 { font-size: 14px; margin: 10px 0 4px 0; font-weight: bold; color: #ccccf0; }
+
+        .sr p { margin: 0 0 8px 0; line-height: 1.5; }
+
+        .sr hr { border: none; border-top: 1px solid #3a3a44; margin: 10px 0; }
+
+        .sr table { border-collapse: collapse; }    
+
+        .top-bar { 
+            background: #2f2a4e; 
+            padding: 4px 8px; 
+            font-size: 12px; 
+            text-align: center; 
+            border-bottom: 1px solid #5a4f7a; 
+            color: #ddddff; 
+        }
+
+        .outer-table { width: 100%; }
+
+        .left-col { 
+            width: 150px; 
+            vertical-align: top; 
+            padding: 8px; 
+            border-right: 1px solid #2c2c36; 
+            background: #171722; 
+        }
+
+        .main-col { 
+            vertical-align: top; 
+            padding: 10px 14px; 
+            background: #0f0f12; 
+        }
+
+        .right-col { 
+            width: 140px; 
+            vertical-align: top; 
+            padding: 8px; 
+            border-left: 1px solid #2c2c36; 
+            background: #1e1c1a; 
+        }  
+
+        .header-area { 
+            background: #1b1a2c; 
+            border-bottom: 2px solid #5a4f9e; 
+            padding: 10px 14px; 
+        }
+
+        .site-title { 
+            font-family: Times New Roman, serif; 
+            font-size: 28px; 
+            font-weight: bold; 
+            color: #cbb5ff; 
+            margin: 0; 
+        }
+
+        .site-tagline { 
+            font-size: 12px; 
+            color: #acacc9; 
+            margin: 2px 0 0 0; 
+            font-style: italic; 
+        }
+
+        .nav-row { 
+            background: #2b2542; 
+            border-bottom: 1px solid #5a4f7a; 
+            padding: 4px 14px; 
+            font-size: 13px; 
+        }
+
+        .nav-row a { 
+            margin-right: 12px; 
+            color: #a5c1ff; 
+            text-decoration: none; 
+            font-weight: bold; 
+        }
+
+        .nav-row a:hover { text-decoration: underline; color: #ffa671; }    
+
+        .sidebar-box { margin-bottom: 14px; }
+
+        .sidebar-box-title { 
+            font-size: 12px; 
+            font-weight: bold; 
+            background: #3a3370; 
+            padding: 2px 5px; 
+            border: 1px solid #6960a0; 
+            margin-bottom: 4px; 
+            color: #f0eaff; 
+        }
+
+        .sidebar-box p, .sidebar-box li { font-size: 12px; color: #ccccdd; }
+
+        .sidebar-box ul { margin: 0; padding-left: 16px; }
+
+        .sidebar-box ul li { margin-bottom: 3px; line-height: 1.4; }
+
+        .sidebar-box ul li a { color: #9db9ff; }   
+
+        .img-placeholder { 
+            background: #2a2a34; 
+            border: 1px solid #5e5e70; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            font-size: 11px; 
+            color: #bcbcce; 
+            font-style: italic; 
+            text-align: center; 
+        }   
+
+        .content-section { margin-bottom: 20px; }
+
+        .placeholder-text { 
+            color: #e1e1ec; 
+            font-style: italic; 
+            font-size: 13px; 
+            line-height: 1.6; 
+            background: #20212b; 
+            border: 1px dashed #6a6a82; 
+            padding: 8px; 
+        }
+
+        .placeholder-text .label { 
+            display: block; 
+            font-size: 10px; 
+            color: #b9b9de; 
+            letter-spacing: 1px; 
+            text-transform: uppercase; 
+            margin-bottom: 4px; 
+            font-style: normal; 
+        }  
+
+        .shrine-table { width: 100%; }
+
+        .shrine-table td { vertical-align: top; padding: 6px; width: 50%; }
+
+        .shrine-cell { 
+            border: 1px solid #4a4a62; 
+            padding: 8px; 
+            background: #202026; 
+            text-align: center; 
+            min-height: 70px; 
+        }
+
+        .shrine-cell .sc-title { font-size: 13px; font-weight: bold; margin-bottom: 4px; color: #dbd0ff; }
+
+        .shrine-cell .sc-ph { font-size: 11px; color: #b0b0ca; font-style: italic; }    
+
+        .tracklist { width: 100%; border-collapse: collapse; font-size: 13px; }
+
+        .tracklist td { padding: 4px 6px; border-bottom: 1px dotted #3e3e4c; color: #dadef0; }
+
+        .tracklist tr:hover td { background: #2a2b38; }
+
+        .track-num { color: #9ca0c0; width: 20px; text-align: right; }
+
+        .track-name { color: #bdcaff; }
+
+        .track-dur { color: #8585aa; text-align: right; width: 40px; }  
+
+        .about-dl { font-size: 13px; margin: 0; }
+
+        .about-dl dt { font-weight: bold; color: #cdbef5; float: left; width: 120px; clear: left; margin-bottom: 5px; }
+
+        .about-dl dd { margin-left: 130px; color: #cacae2; margin-bottom: 5px; font-style: italic; }   
+
+        .gb-entry { border-left: 3px solid #555588; padding: 4px 8px; margin-bottom: 10px; font-size: 13px; }
+
+        .gb-entry .gb-name { font-weight: bold; color: #cfc1ff; }
+
+        .gb-entry .gb-msg { color: #cdcde6; font-style: italic; margin-top: 2px; }
+
+        .gb-entry .gb-date { font-size: 11px; color: #8888aa; margin-top: 2px; }   
+
+        .footer-area { 
+            border-top: 1px solid #373747; 
+            background: #14141c; 
+            padding: 8px 14px; 
+            font-size: 11px; 
+            color: #9e9eb0; 
+            text-align: center; 
+            margin-top: 10px; 
+        }
+
+        .footer-area a { color: #8fabdf; }  
+
+        .blink { animation: blink-anim 1s step-end infinite; }
+
+        @keyframes blink-anim { 0%,100%{opacity:1} 50%{opacity:0} } 
+
+        .notice { 
+            background: #2c2a1e; 
+            border: 1px solid #c4b56a; 
+            padding: 5px 8px; 
+            font-size: 12px; 
+            margin-bottom: 10px; 
+            color: #f0edc5; 
+        }
+
+        .counter-box { text-align: center; font-size: 12px; margin-top: 6px; color: #b4b4d4; }
+
+        .counter-num { 
+            font-family: Courier New, monospace; 
+            font-size: 16px; 
+            background: #0a0a0e; 
+            color: #9eff9e; 
+            padding: 1px 6px; 
+            letter-spacing: 3px; 
+        }   
+
+        .who-layout { display: flex; gap: 10px; align-items: flex-start; }
+
+        .who-img { flex-shrink: 0; }
+
+        .sr button, .sr input, .sr textarea { background: #2a2a36; color: #eaeaff; border: 1px solid #5a5a77; }
+    </style>
+</head>
+<body>
+<div class="sr">
+
+    <div class="top-bar">
+        Cast Heal is the goat &nbsp;|&nbsp; <span class="blink">updated [12.06.26]</span> &nbsp;|&nbsp; Quite humorous
+    </div>
+
+    <div class="header-area">
+        <p class="site-title">Stories from Healverse</p>
+        <p class="site-tagline">The most silly things ever imagined.</p>
+    </div>
+
+    <div class="nav-row">
+        <a href="index.html">Home</a>
+        <a href="healverse.html">Healverse</a>
+        <a href="storycollection.html">Story Collection</a>
+    </div>
+
+    <table class="outer-table">
+        <tr>
+
+        <!-- LEFT SIDEBAR -->
+        <td class="left-col">
+
+        <div class="sidebar-box">
+            <div class="sidebar-box-title">navigation</div>
+            <ul>
+                <li><a href="index.html">home</a></li>
+                <li><a href="healverse.html">Healverse</a></li>
+                <li><a href="storycollection.html">Story Collection</a></li>
+            </ul>
+        </div>
+
+        <div class="sidebar-box">
+            <div class="sidebar-box-title">site updates</div>
+            <ul>
+                <li>[12.06.26] — INTRODUCING THE HEALVERSE AND A STORY COLLECTION</li>
+            </ul>
+        </div>
+        </td>
+
+        <td class="main-col">
+
+            <div class="notice">
+                Welcome to the Story collection!!!
+            </div>
+
+            <!-- VOLUME 1 -->
+            <div class="content-section" id="who">
+                <h2>Volume 1</h2>
+                Chapter 1 is coming out next update! <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+            </div>
+        </td>
+        </tr>
+    </table>
+
+    <div class="footer-area">
+        &copy; 12.06.2026 Cast Heal corner &nbsp;&middot;&nbsp;
+        fan site, not official &nbsp;&middot;&nbsp;
+        <a href="#">back to top</a>
+        <br>
+  </div>
+
+</div>
+
+
+</body>
+</html>
